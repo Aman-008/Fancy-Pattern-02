@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num, row, col;
+    cin >> num;
+    int c = 1;
+    for (row = 0; row < num; row++)
+    {
+        for (col = 0; col < row + 1; col++)
+        {
+            cout << c;
+            c++;
+            if (col != row)
+            {
+                cout << "*";
+            }
+        }
+        cout << endl;
+    }
+
+    // cout << "C is " << c << endl;
+    int start = c - num;
+    for (row = 0; row < num; row++)
+    {
+        int k = start;
+        for (col = 0; col < num - row; col++)
+        {
+            cout << k;
+            k++;
+            if (col != num - row - 1)
+            {
+                cout << "*";
+            }
+        }
+        start = start - (num - row - 1);
+
+        cout << endl;
+    }
+
+    return 0;
+}
